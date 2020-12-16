@@ -41,9 +41,7 @@ jobs:
       os: linux
       arch: ppc64le
 before_install:
-  - if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then 
-      sudo apt-get install ghc-8.0.1;
-    fi
+  - sudo apt-get install ghc-8.0.1
   - HC=$(echo "/opt/$CC/bin/ghc" | sed 's/-/\//')
   - WITHCOMPILER="-w $HC"
   - HADDOCK=$(echo "/opt/$CC/bin/haddock" | sed 's/-/\//')
